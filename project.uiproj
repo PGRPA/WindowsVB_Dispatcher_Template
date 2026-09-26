@@ -1,0 +1,6 @@
+{
+  "Name": "WindowsVB_Dispatcher_Template",
+  "ProjectType": "Process",
+  "Description": "Process description.",
+  "MainFile": "Main.xaml"
+}
