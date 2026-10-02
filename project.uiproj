@@ -1,6 +1,6 @@
 {
   "Name": "WindowsVB_Dispatcher_Template",
   "ProjectType": "Process",
-  "Description": "Process description.",
+  "Description": "UiPath dispatcher template for Windows VB projects",
   "MainFile": "Main.xaml"
 }

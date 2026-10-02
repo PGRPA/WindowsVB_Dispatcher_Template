@@ -1,7 +1,7 @@
 {
   "name": "WindowsVB_Dispatcher_Template",
   "projectId": "20b0a800-8e61-4292-ae11-a96d851f4edb",
-  "description": "Process description.",
+  "description": "UiPath dispatcher template for Windows VB projects",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Database.Activities": "[2.0.0]",

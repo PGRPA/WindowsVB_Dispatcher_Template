@@ -808,7 +808,7 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message - 11" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_82" Level="Error" Message="[&quot;=&gt;Error: &quot; + exception.Message + Environment.NewLine + &quot;=&gt;At: &quot; + exception.Source + &quot;.&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message - 10" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_82" Level="Error" Message="[&quot;=&gt;Error: &quot; + exception.Message + Environment.NewLine + &quot;=&gt;At: &quot; + exception.Source + &quot;.&quot;]" />
                                   <TryCatch sap2010:Annotation.AnnotationText="Try to take a screenshot." DisplayName="Try Catch - TakeScreenshot.xaml - GetQI" sap:VirtualizedContainerService.HintSize="416,88" sap2010:WorkflowViewState.IdRef="TryCatch_39">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -844,7 +844,7 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message - 10" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="Warn" Message="[&quot;Failed to take screenshot: &quot; + exception.Message + &quot;, At Source: &quot; + exception.Source]" />
+                                            <ui:LogMessage DisplayName="Log Message - 11" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_81" Level="Warn" Message="[&quot;Failed to take screenshot: &quot; + exception.Message + &quot;, At Source: &quot; + exception.Source]" />
                                           </Sequence>
                                         </ActivityAction>
                                       </Catch>
