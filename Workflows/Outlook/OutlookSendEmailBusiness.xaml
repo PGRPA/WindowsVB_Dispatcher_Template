@@ -44,6 +44,8 @@
       <x:String>Newtonsoft.Json</x:String>
       <x:String>System.Dynamic</x:String>
       <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities.JSON.Models</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -103,9 +105,10 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Send E-mail with Report to business." DisplayName="OutlookSendEmailBusiness" sap:VirtualizedContainerService.HintSize="895,1057" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send E-mail with Report to business." DisplayName="OutlookSendEmailBusiness" sap:VirtualizedContainerService.HintSize="664.4000000000001,1230.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolBEExists" />
       <Variable x:TypeArguments="x:String" Name="strEmailTo" />
@@ -119,6 +122,7 @@
       <Variable x:TypeArguments="scg:List(x:String)" Name="listEmailAttachment2" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="listEmailAttachmentFinal" />
       <Variable x:TypeArguments="x:Int32" Name="intColSpan" />
+      <Variable x:TypeArguments="scg:Dictionary(x:Int32, x:Int32)" Name="dictColNo_Width" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -126,16 +130,17 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - 64" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Outlook Send Email Business&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Excel\ExcelConvertTableToHtml.xaml" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Excel\ExcelConvertTableToHtml.xaml">
+    <ui:LogMessage DisplayName="Log Message - 64" sap:VirtualizedContainerService.HintSize="478.4,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Outlook Send Email Business&quot;]" />
+    <ui:DeserializeJson x:TypeArguments="scg:Dictionary(x:Int32, x:Int32)" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Deserialize JSON - dictColNo_Width" sap:VirtualizedContainerService.HintSize="478.4,173.6" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[dictColNo_Width]" JsonString="[Config(&quot;ColNo_Width&quot;).ToString()]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Excel\ExcelConvertTableToHtml.xaml" sap:VirtualizedContainerService.HintSize="478.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Excel\ExcelConvertTableToHtml.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:Int32, x:Int32)" x:Key="dictColNo_Width">[new System.Collections.Generic.Dictionary(Of System.Int32, System.Int32) From { { 1, 45 } }]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:Int32, x:Int32)" x:Key="dictColNo_Width">[dictColNo_Width]</InArgument>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExcelTable">[dtExcelReportTable]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="strHtmlTableHeader">[strHtmlTableHeader]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="strHtmlTableContent">[strHtmlTableContent]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Email Details" sap:VirtualizedContainerService.HintSize="478,428" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Email Details" sap:VirtualizedContainerService.HintSize="478.4,429.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
@@ -250,7 +255,7 @@ Config("logF_BusinessProcessName").ToString(), DateTime.Now.ToString("yyyy-MM-dd
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <If Condition="[Not strEmailTo.Equals(&quot;null&quot;)]" DisplayName="If - Email Address Provided" sap:VirtualizedContainerService.HintSize="478,57" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not strEmailTo.Equals(&quot;null&quot;)]" DisplayName="If - Email Address Provided" sap:VirtualizedContainerService.HintSize="478.4,56.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -350,6 +355,6 @@ Config("logF_BusinessProcessName").ToString(), DateTime.Now.ToString("yyyy-MM-dd
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message - 67" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Outlook Send Email Business&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - 67" sap:VirtualizedContainerService.HintSize="478.4,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Outlook Send Email Business&quot;]" />
   </Sequence>
 </Activity>
