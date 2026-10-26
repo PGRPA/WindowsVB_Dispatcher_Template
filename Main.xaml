@@ -136,18 +136,18 @@
       <AssemblyReference>System.Data.Common</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="[Process_Name_Dispatcher]&#xD;&#xA;[Process description]&#xD;&#xA;[Author]&#xD;&#xA;&#xD;&#xA;==========&#xD;&#xA;To modify:&#xD;&#xA;&#xD;&#xA;- change files names: Data\Config_Process_Name.xlsx, Tests\TS_Process_Name.xlsx,&#xD;&#xA;=&gt; to: Process_Name_Dispatcher\Performer&#xD;&#xA;- change 2 variables in 3 Workflows: Initialization\Init Configs, _Sandbox\Init Configs, TC_WorkflowName\Init Configs&#xD;&#xA;=&gt; Assign - strConfigFilePathLocal, Get Asset - strConfigFilePath&#xD;&#xA;&#xD;&#xA;- edit process: name, description, author here and in project.json&#xD;&#xA;- edit Main Workflow properties name&#xD;&#xA;- edit Config values and move file to another directory if needed&#xD;&#xA;- edit Project Settings&#xD;&#xA;&#xD;&#xA;- add assets to Orchestrator if needed&#xD;&#xA;- add Queue to Orchestrator&#xD;&#xA;- re-add test data Excel file, to TC workflows if needed&#xD;&#xA;- update packages if needed&#xD;&#xA;- open each file &amp; Workflow for error check&#xD;&#xA;&#xD;&#xA;- remove unused imports&#xD;&#xA;- remove unused Workflows&#xD;&#xA;- remove unnecessary Then-Else sequences&#xD;&#xA;- remove unused entries in Config&#xD;&#xA;- remove marked in yellow Settings &amp; Constants entries in Config&#xD;&#xA;&#xD;&#xA;- run analyzer&#xD;&#xA;- run parse XAML&#xD;&#xA;&#xD;&#xA;==========&#xD;&#xA;Delete if not used:&#xD;&#xA;&#xD;&#xA;Activities\Workflows - files - Config entries&#xD;&#xA;- Build Data Table - dtExcelReportTable - -&#xD;&#xA;- TC_WorkflowName.xaml TS_Process_Name.xlsx -&#xD;&#xA;- AppXYLogin.xaml - AppXYLogin&#xD;&#xA;- AppXYLogout.xaml - -&#xD;&#xA;- ExcelGetTable.xaml Input_File.xlsx ExcelInputFilePath, ExcelInputSheet, RequiredColumnNames, ExcelGetTable&#xD;&#xA;- OutlookGetEmails.xaml - OutlookInboxFolderPath, OutlookEmailsAmount, OutlookGetEmails&#xD;&#xA;- OutlookMoveEmail.xaml - OutlookInboxFolderPath, OutlookEmailsAmount, OutlookGetEmails&#xD;&#xA;- APIRunQuery.xaml - APIRunQuery&#xD;&#xA;- FoldersCreate.xaml - -&#xD;&#xA;- QueueGetAllItems.xaml - -&#xD;&#xA;- ShowRobotStatus.xaml Robot_Zakończył_Pracę.txt RobotStatusFolderPath, ShowRobotStatus&#xD;&#xA;- SQLRunQuery.xaml - SQLRunQuery&#xD;&#xA;&#xD;&#xA;==========" DisplayName="Process_Name_Dispatcher" sap:VirtualizedContainerService.HintSize="732.8000000000001,592" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID0}" sap2010:Annotation.AnnotationText="[Process_Name_Dispatcher]&#xA;[Process description]&#xA;[Author]" DisplayName="Process_Name_Dispatcher" sap:VirtualizedContainerService.HintSize="1112,592" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">35,135</av:Point>
         <x:Double x:Key="StateContainerWidth">974</x:Double>
         <x:Double x:Key="StateContainerHeight">722</x:Double>
-        <av:PointCollection x:Key="ConnectorLocation">85,160 115,160 115,158.5 124,158.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">84.6,159.8 114.6,159.8 114.6,158.4 124,158.4</av:PointCollection>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="496,1148" sap2010:WorkflowViewState.IdRef="State_2">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="232,120.8" sap2010:WorkflowViewState.IdRef="State_2">
       <State.Entry>
         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="451.2,726.4" sap2010:WorkflowViewState.IdRef="TryCatch_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -716,7 +716,7 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
         <Transition DisplayName="Successful" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:PointCollection x:Key="ConnectorLocation">356,188.75 386,188.75 386,281 506,281</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">356,188.6 386,188.6 386,280.76 506,280.76</av:PointCollection>
               <x:Int32 x:Key="SrcConnectionPointIndex">56</x:Int32>
               <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
             </scg:Dictionary>
@@ -979,7 +979,7 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
                 <Transition DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="450,494" sap2010:WorkflowViewState.IdRef="Transition_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">586.15,325 586.15,355 228.4,355 228.4,219</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">586.08,324.6 586.08,354.6 228.4,354.6 228.4,218.8</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">27</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">35</x:Int32>
                     </scg:Dictionary>
@@ -992,7 +992,7 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
                 <Transition DisplayName="New Transaction" sap:VirtualizedContainerService.HintSize="466,494" sap2010:WorkflowViewState.IdRef="Transition_20">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:PointCollection x:Key="ConnectorLocation">654.85,325 654.85,355 656,355 656,414</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">654.72,324.6 654.72,354.6 656,354.6 656,414</av:PointCollection>
                       <x:Int32 x:Key="SrcConnectionPointIndex">51</x:Int32>
                       <x:Int32 x:Key="DestConnectionPointIndex">50</x:Int32>
                     </scg:Dictionary>
@@ -1107,9 +1107,9 @@ DirectCast(SystemException.Data("ScreenshotPath"), List(Of String)).Select(Funct
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.Condition>[boolItemsAdded = true]</Transition.Condition>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="200,109.6" sap2010:WorkflowViewState.IdRef="State_9" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="694.4,711.2" sap2010:WorkflowViewState.IdRef="State_9" IsFinal="True">
                               <State.Entry>
-                                <Sequence DisplayName="Close All Aplications" sap:VirtualizedContainerService.HintSize="449.6,566.4" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                                <Sequence DisplayName="Close All Aplications" sap:VirtualizedContainerService.HintSize="649.6,566.4" sap2010:WorkflowViewState.IdRef="Sequence_150">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1350,9 +1350,9 @@ Config IsNot Nothing]</InArgument>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:MultipleAssign>
-                                  <ui:IfElseIfV2 Condition="[SystemException Is Nothing AndAlso Config IsNot Nothing]" DisplayName="Else If - Log Job Status &amp; Send E-mail" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_2">
+                                  <ui:IfElseIfV2 Condition="[SystemException Is Nothing AndAlso Config IsNot Nothing]" DisplayName="Else If - Log Job Status &amp; Send E-mail" sap:VirtualizedContainerService.HintSize="616,56.8" sap2010:WorkflowViewState.IdRef="IfElseIfV2_2">
                                     <ui:IfElseIfV2.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_149">
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_149">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1367,15 +1367,15 @@ Config IsNot Nothing]</InArgument>
                                       <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                         <ui:IfElseIfBlock BlockType="ElseIf" Condition="[boolBE]" DisplayName="If else if block - Body BE" sap:VirtualizedContainerService.HintSize="334,37" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_3">
                                           <ui:IfElseIfBlock.Then>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_147">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_147">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message - 17" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Warn" Message="[&quot;Job successful, ended with BE [Sending E-mail to business]&quot;]" />
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Outlook\OutlookSendEmailBusiness.xaml - BE" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="Workflows\Outlook\OutlookSendEmailBusiness.xaml">
+                                              <ui:LogMessage DisplayName="Log Message - 17" sap:VirtualizedContainerService.HintSize="451.2,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Warn" Message="[&quot;Job successful, ended with BE [Sending E-mail to business]&quot;]" />
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Outlook\OutlookSendEmailBusiness.xaml - BE" sap:VirtualizedContainerService.HintSize="451.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_55" UnSafe="False" WorkflowFileName="Workflows\Outlook\OutlookSendEmailBusiness.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="s:Exception" x:Key="SystemException">[SystemException]</InArgument>
                                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExcelReportTable">[dtExcelReportTable]</InArgument>
@@ -1386,21 +1386,52 @@ Config IsNot Nothing]</InArgument>
                                         </ui:IfElseIfBlock>
                                         <ui:IfElseIfBlock BlockType="ElseIf" Condition="[boolAE]" DisplayName="If else if block - Body AE" sap:VirtualizedContainerService.HintSize="334,37" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_4">
                                           <ui:IfElseIfBlock.Then>
-                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_148">
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_148">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message - 18" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Error" Message="[&quot;Job failed, ended with AE [Sending E-mail to RPA support]&quot;]" />
-                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Outlook\OutlookSendEmailRPA.xaml" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="Workflows\Outlook\OutlookSendEmailRPA.xaml">
+                                              <If Condition="[dtExcelReportTable IsNot Nothing AndAlso dtExcelReportTable.Rows.Count &gt; 0]" DisplayName="If - Report Table Has Data" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="If_26">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_178">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Outlook\OutlookSendEmailBusiness.xaml - PartiallyDone" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_61" UnSafe="False" WorkflowFileName="Workflows\Outlook\OutlookSendEmailBusiness.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="s:Exception" x:Key="SystemException">[Nothing]</InArgument>
+                                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExcelReportTable">[dtExcelReportTable]</InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_179">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <ui:LogMessage DisplayName="Log Message - 18" sap:VirtualizedContainerService.HintSize="416,174.4" sap2010:WorkflowViewState.IdRef="LogMessage_75" Level="Error" Message="[&quot;Job failed, ended with AE [Sending E-mail to RPA support]&quot;]" />
+                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Outlook\OutlookSendEmailRPA.xaml" sap:VirtualizedContainerService.HintSize="416,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_56" UnSafe="False" WorkflowFileName="Workflows\Outlook\OutlookSendEmailRPA.xaml">
                                                 <ui:InvokeWorkflowFile.Arguments>
                                                   <InArgument x:TypeArguments="s:Exception" x:Key="SystemException">[SystemException]</InArgument>
-                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="dtExcelReportTable">[dtExcelReportTable]</InArgument>
                                                 </ui:InvokeWorkflowFile.Arguments>
                                               </ui:InvokeWorkflowFile>
-                                              <TerminateWorkflow DisplayName="Terminate Workflow - AE" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3" Reason="[If(SystemException.Data.Contains(&quot;ExState&quot;) AndAlso SystemException.Data(&quot;ExState&quot;).Equals(&quot;Init&quot;), &#xA; jsonConfig(&quot;SE&quot;)(0).ToString(), &#xA; jsonConfig(&quot;AE&quot;)(0).ToString()) + Environment.NewLine + &#xA; &quot;=&gt;Error: &quot; + SystemException.Message + Environment.NewLine + &quot;=&gt;At: &quot; + If(SystemException.Source IsNot Nothing, SystemException.Source + &quot;.&quot;, &quot;[null]&quot;) + &#xA;  If(SystemException.InnerException IsNot Nothing, &#xA;   Environment.NewLine + &quot;=&gt;Error2: &quot; + SystemException.InnerException.Message + Environment.NewLine + &quot;=&gt;At2: &quot; + If(SystemException.InnerException.Source IsNot Nothing, SystemException.InnerException.Source + &quot;.&quot;, &quot;[null]&quot;), &#xA;  &quot;&quot;)]" />
+                                              <TerminateWorkflow DisplayName="Terminate Workflow - AE" sap:VirtualizedContainerService.HintSize="416,113.6" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3" Reason="[If(SystemException.Data.Contains(&quot;ExState&quot;) AndAlso SystemException.Data(&quot;ExState&quot;).Equals(&quot;Init&quot;), &#xA; jsonConfig(&quot;SE&quot;)(0).ToString(), &#xA; jsonConfig(&quot;AE&quot;)(0).ToString()) + Environment.NewLine + &#xA; &quot;=&gt;Error: &quot; + SystemException.Message + Environment.NewLine + &quot;=&gt;At: &quot; + If(SystemException.Source IsNot Nothing, SystemException.Source + &quot;.&quot;, &quot;[null]&quot;) + &#xA;  If(SystemException.InnerException IsNot Nothing, &#xA;   Environment.NewLine + &quot;=&gt;Error2: &quot; + SystemException.InnerException.Message + Environment.NewLine + &quot;=&gt;At2: &quot; + If(SystemException.InnerException.Source IsNot Nothing, SystemException.InnerException.Source + &quot;.&quot;, &quot;[null]&quot;), &#xA;  &quot;&quot;)]" />
                                             </Sequence>
                                           </ui:IfElseIfBlock.Then>
                                         </ui:IfElseIfBlock>
@@ -1413,7 +1444,7 @@ Config IsNot Nothing]</InArgument>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:IfElseIfV2.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_146">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_146">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1430,8 +1461,8 @@ Config IsNot Nothing]</InArgument>
                                       </Sequence>
                                     </ui:IfElseIfV2.Then>
                                   </ui:IfElseIfV2>
-                                  <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - objProcessInfoEnd" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_3" Result="[objProcessInfoEnd]" />
-                                  <ui:LogMessage DisplayName="Log Message - 20" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info" Message="[&quot;Stop - &quot; + objProcessInfoEnd.ProcessName + &quot; =&gt; &quot; + DateTime.Now.ToString(&quot;HH:mm:ss tt&quot;)]" />
+                                  <ui:GetCurrentJobInfo DisplayName="Get Current Job Info - objProcessInfoEnd" sap:VirtualizedContainerService.HintSize="616,56.8" sap2010:WorkflowViewState.IdRef="GetCurrentJobInfo_3" Result="[objProcessInfoEnd]" />
+                                  <ui:LogMessage DisplayName="Log Message - 20" sap:VirtualizedContainerService.HintSize="616,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_77" Level="Info" Message="[&quot;Stop - &quot; + objProcessInfoEnd.ProcessName + &quot; =&gt; &quot; + DateTime.Now.ToString(&quot;HH:mm:ss tt&quot;)]" />
                                 </Sequence>
                               </State.Entry>
                               <sap:WorkflowViewStateService.ViewState>

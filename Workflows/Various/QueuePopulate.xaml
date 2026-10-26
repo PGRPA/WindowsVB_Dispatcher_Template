@@ -111,7 +111,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Add Queue Items to Queue." DisplayName="QueuePopulate" sap:VirtualizedContainerService.HintSize="895,2836" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Add Queue Items to Queue." DisplayName="QueuePopulate" sap:VirtualizedContainerService.HintSize="1096,1092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="intLoopCounter" />
       <Variable x:TypeArguments="x:Int32" Name="intQICounterAdded" />
@@ -123,25 +123,24 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - 89" sap:VirtualizedContainerService.HintSize="550,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Queue Populate&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intLoopCounter]" DataTable="[dtExcelInputTable]" DisplayName="For Each Row in Data Table - CurrentRow" sap:VirtualizedContainerService.HintSize="550,2266" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:LogMessage DisplayName="Log Message - 89" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Queue Populate&quot;]" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intLoopCounter]" DataTable="[dtExcelInputTable]" DisplayName="For Each Row in Data Table - CurrentRow" sap:VirtualizedContainerService.HintSize="452,522" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Validate Item" sap:VirtualizedContainerService.HintSize="548,2084" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Validate Item" sap:VirtualizedContainerService.HintSize="450,340" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strQIReference" />
               <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="ieQueueItems" />
-              <Variable x:TypeArguments="x:String" Name="strStatusCellAddress" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign DisplayName="Assign - strQIReference" sap:VirtualizedContainerService.HintSize="514,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign DisplayName="Assign - strQIReference" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strQIReference]</OutArgument>
               </Assign.To>
@@ -149,7 +148,7 @@
                 <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString()]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope - Get Queue Items - ieQueueItems" sap:VirtualizedContainerService.HintSize="514,57" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;NR&quot;).ToString())]" RetryInterval="[TimeSpan.FromSeconds(Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;TS&quot;).ToString()))]">
+            <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope - Get Queue Items - ieQueueItems" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;NR&quot;).ToString())]" RetryInterval="[TimeSpan.FromSeconds(Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;TS&quot;).ToString()))]">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,227" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -172,37 +171,38 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:RetryScope>
-            <If Condition="[ieQueueItems Is Nothing OrElse ieQueueItems.Count() = 0]" DisplayName="If - Nothing Found - Add QI" sap:VirtualizedContainerService.HintSize="514,1792" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[ieQueueItems Is Nothing OrElse ieQueueItems.Count() = 0]" DisplayName="If - Nothing Found - Add QI" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then - Add QI" sap:VirtualizedContainerService.HintSize="512,1040" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Then - Add QI" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strValue1" />
                     <Variable x:TypeArguments="x:String" Name="strValue2" />
                     <Variable x:TypeArguments="x:String" Name="strValue3_Date" />
                     <Variable x:TypeArguments="x:String" Name="strCurrentDate" />
+                    <Variable x:TypeArguments="x:String" Name="strStatusCellAddress" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message - 90" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Adding item: &quot; + strQIReference]" />
-                  <ui:MultipleAssign DisplayName="Multiple Assign - Set QI Content" sap:VirtualizedContainerService.HintSize="478,242" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign DisplayName="Multiple Assign - Set QI Content" sap:VirtualizedContainerService.HintSize="478,273" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
-                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
                           <ui:AssignOperation.To>
                             <OutArgument x:TypeArguments="x:String">[strValue1]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(CurrentRow(0).ToString(), "(^\\s+|\\s+$)", "").Trim().ToString()]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[CurrentRow(0).ToString()]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -210,7 +210,7 @@
                             <OutArgument x:TypeArguments="x:String">[strValue2]</OutArgument>
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
-                            <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(CurrentRow(1).ToString(), "(^\\s+|\\s+$)", "").Trim().ToString()]</InArgument>
+                            <InArgument x:TypeArguments="x:String">[CurrentRow(1).ToString()]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -219,6 +219,14 @@
                           </ui:AssignOperation.To>
                           <ui:AssignOperation.Value>
                             <InArgument x:TypeArguments="x:String">[CurrentRow(2).ToString()]</InArgument>
+                          </ui:AssignOperation.Value>
+                        </ui:AssignOperation>
+                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                          <ui:AssignOperation.To>
+                            <OutArgument x:TypeArguments="x:String">[strStatusCellAddress]</OutArgument>
+                          </ui:AssignOperation.To>
+                          <ui:AssignOperation.Value>
+                            <InArgument x:TypeArguments="x:String">[CurrentRow(4).ToString()]</InArgument>
                           </ui:AssignOperation.Value>
                         </ui:AssignOperation>
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -232,56 +240,6 @@
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
-                  <Sequence sap2010:Annotation.AnnotationText="Based on given column name, set Status cell address." DisplayName="Set Status Cell Address" sap:VirtualizedContainerService.HintSize="478,88" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="strStatusColumnName" />
-                      <Variable x:TypeArguments="x:Int32" Name="intColumnIndex" />
-                      <Variable x:TypeArguments="x:String" Name="strColumnLetter" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:MultipleAssign DisplayName="Multiple Assign - Status Name &amp; Index" sap:VirtualizedContainerService.HintSize="478,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[strStatusColumnName]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[Config("StatusColName").ToString()]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:Int32">[intColumnIndex]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:Int32">[dtExcelInputTable.Columns(strStatusColumnName).Ordinal]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                    <ui:InvokeCode ContinueOnError="{x:Null}" Code="int div = intColumnIndex + 1; //Dodaje 1 do indeksu, bo wcześniej kolumna A = 0, więc po dodaniu 1, A = 1.&#xA;int mod = 0;&#xA;&#xA;while (div &gt; 0)&#xA;{&#xA; mod = (div - 1) % 26;&#xA; strColumnLetter = (char)(65 + mod) + strColumnLetter;&#xA; div = (int)((div - mod) / 26);&#xA;}&#xA;return;" DisplayName="Invoke Code - strColumnLetter" sap:VirtualizedContainerService.HintSize="478,197" sap2010:WorkflowViewState.IdRef="InvokeCode_1" Language="CSharp">
-                      <ui:InvokeCode.Arguments>
-                        <InArgument x:TypeArguments="x:Int32" x:Key="intColumnIndex">[intColumnIndex]</InArgument>
-                        <OutArgument x:TypeArguments="x:String" x:Key="strColumnLetter">[strColumnLetter]</OutArgument>
-                      </ui:InvokeCode.Arguments>
-                    </ui:InvokeCode>
-                    <Assign DisplayName="Assign - strStatusCellAddress" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_2">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[strStatusCellAddress]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[strColumnLetter + (intLoopCounter + 2).ToString()]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
                   <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" sap2010:Annotation.AnnotationText="Try to add QI to the Queue." ContinueOnError="False" DisplayName="Retry Scope - Add Queue Item - strQIReference" sap:VirtualizedContainerService.HintSize="478,88" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="[Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;NR&quot;).ToString())]" RetryInterval="[TimeSpan.FromSeconds(Int32.Parse(jsonConfig(&quot;RS&quot;)(&quot;OrchestratorGetSetActivities&quot;)(&quot;TS&quot;).ToString()))]">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
@@ -326,16 +284,16 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else - QI Already Exists" sap:VirtualizedContainerService.HintSize="512,622" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Else - QI Already Exists" sap:VirtualizedContainerService.HintSize="450,25" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message - 91" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Skipping item: &quot; + strQIReference + &quot;, already in the queue [New or InProgress]&quot;]" />
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New String(){strQIReference, jsonConfig(&quot;Status&quot;)(1).ToString()}]" DataTable="[dtExcelReportTable]" DisplayName="Add Data Row - dtExcelReportTable - Skipped" sap:VirtualizedContainerService.HintSize="478,221" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                  <Assign DisplayName="Assign - intQICounterSkipped" sap:VirtualizedContainerService.HintSize="478,166" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <ui:LogMessage DisplayName="Log Message - 91" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Skipping item: &quot; + strQIReference + &quot;, already in the queue [New or InProgress]&quot;]" />
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New String(){strQIReference, jsonConfig(&quot;Status&quot;)(1).ToString()}]" DataTable="[dtExcelReportTable]" DisplayName="Add Data Row - dtExcelReportTable - Skipped" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                  <Assign DisplayName="Assign - intQICounterSkipped" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[intQICounterSkipped]</OutArgument>
                     </Assign.To>
@@ -356,7 +314,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:LogMessage DisplayName="Log Message - 92" sap:VirtualizedContainerService.HintSize="550,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Added: &quot; + intQICounterAdded.ToString() + If(intQICounterAdded = 0 Or intQICounterAdded &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Skipped: &quot; + intQICounterSkipped.ToString() + If(intQICounterSkipped = 0 Or intQICounterSkipped &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Queue: &quot; + Config(&quot;OrchestratorQueueName&quot;).ToString()]" />
-    <ui:LogMessage DisplayName="Log Message - 93" sap:VirtualizedContainerService.HintSize="550,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Queue Populate&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - 92" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Added: &quot; + intQICounterAdded.ToString() + If(intQICounterAdded = 0 Or intQICounterAdded &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Skipped: &quot; + intQICounterSkipped.ToString() + If(intQICounterSkipped = 0 Or intQICounterSkipped &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Queue: &quot; + Config(&quot;OrchestratorQueueName&quot;).ToString()]" />
+    <ui:LogMessage DisplayName="Log Message - 93" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Queue Populate&quot;]" />
   </Sequence>
 </Activity>
