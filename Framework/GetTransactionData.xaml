@@ -354,6 +354,6 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message - 23" sap:VirtualizedContainerService.HintSize="650,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Stop - Get Transaction Data&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - 24" sap:VirtualizedContainerService.HintSize="650,166" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Trace" Message="[&quot;Stop - Get Transaction Data&quot;]" />
   </Sequence>
 </Activity>
