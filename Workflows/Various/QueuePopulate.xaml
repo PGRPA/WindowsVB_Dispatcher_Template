@@ -123,7 +123,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - 89" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Queue Populate&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - 90" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Start - Queue Populate&quot;]" />
     <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intLoopCounter]" DataTable="[dtExcelInputTable]" DisplayName="For Each Row in Data Table - CurrentRow" sap:VirtualizedContainerService.HintSize="452,522" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
@@ -193,7 +193,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message - 90" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Adding item: &quot; + strQIReference]" />
+                  <ui:LogMessage DisplayName="Log Message - 91" sap:VirtualizedContainerService.HintSize="478,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Adding item: &quot; + strQIReference]" />
                   <ui:MultipleAssign DisplayName="Multiple Assign - Set QI Content" sap:VirtualizedContainerService.HintSize="478,273" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
@@ -291,7 +291,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message - 91" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Skipping item: &quot; + strQIReference + &quot;, already in the queue [New or InProgress]&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message - 92" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Skipping item: &quot; + strQIReference + &quot;, already in the queue [New or InProgress]&quot;]" />
                   <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New String(){strQIReference, jsonConfig(&quot;Status&quot;)(1).ToString()}]" DataTable="[dtExcelReportTable]" DisplayName="Add Data Row - dtExcelReportTable - Skipped" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                   <Assign DisplayName="Assign - intQICounterSkipped" sap:VirtualizedContainerService.HintSize="416,165.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
@@ -314,7 +314,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:LogMessage DisplayName="Log Message - 92" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Added: &quot; + intQICounterAdded.ToString() + If(intQICounterAdded = 0 Or intQICounterAdded &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Skipped: &quot; + intQICounterSkipped.ToString() + If(intQICounterSkipped = 0 Or intQICounterSkipped &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Queue: &quot; + Config(&quot;OrchestratorQueueName&quot;).ToString()]" />
-    <ui:LogMessage DisplayName="Log Message - 93" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Queue Populate&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - 93" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Added: &quot; + intQICounterAdded.ToString() + If(intQICounterAdded = 0 Or intQICounterAdded &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Skipped: &quot; + intQICounterSkipped.ToString() + If(intQICounterSkipped = 0 Or intQICounterSkipped &gt; 1, &quot; items, &quot;, &quot; item, &quot;) + &#xA;&quot;Queue: &quot; + Config(&quot;OrchestratorQueueName&quot;).ToString()]" />
+    <ui:LogMessage DisplayName="Log Message - 94" sap:VirtualizedContainerService.HintSize="452,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Stop - Queue Populate&quot;]" />
   </Sequence>
 </Activity>
